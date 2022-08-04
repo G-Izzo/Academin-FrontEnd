@@ -3,7 +3,8 @@
 :root {
   --main-color: #3c4c59;
   --bg-color: #f3f3f3;
-  --util-color: #ff0000;
+  --detail-color: #ff0000;
+  --select-color: #303e49;
 }
 
 html,

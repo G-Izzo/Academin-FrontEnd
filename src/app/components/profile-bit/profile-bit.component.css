@@ -1,8 +1,19 @@
-mat-grid-tile.container {
-  background: #303e49;
-  margin-top: 16px;
+.profile-container {
+  display: flex;
+  height: 30px;
+  width: auto;
 }
 
-mat-grid-tile.detail-color {
-  background-color: var(--util-color);
+.container div {
+  text-align: center;
+}
+
+.detail {
+  background: var(--detail-color);
+  width: 5%;
+}
+
+.profile-content {
+  background-color: var(--select-color);
+  width: 100%;
 }
