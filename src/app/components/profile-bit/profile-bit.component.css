@@ -1,0 +1,8 @@
+mat-grid-tile.container {
+  background: #303e49;
+  margin-top: 16px;
+}
+
+mat-grid-tile.detail-color {
+  background-color: var(--util-color);
+}
