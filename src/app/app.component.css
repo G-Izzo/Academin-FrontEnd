@@ -1,4 +1,4 @@
-.main-container {
+.app-container {
   display: flex;
   height: 100%;
 }
@@ -8,20 +8,17 @@
   flex-direction: column;
 
   color: white;
+  font-size: 18px;
   background-color: var(--main-color);
   flex-basis: 250px;
 }
 
-.side-menu div {
+.side-menu > *:not(app-profile-bit) {
   padding: 16px;
 }
 
 .logo-container {
   display: flex;
-}
-
-.logo-container div {
-  padding: 0px;
 }
 
 .logo {
@@ -33,5 +30,5 @@
 
 .logo + div {
   font-size: 32px;
-  padding-top: 8px;
+  padding-top: 0.5em;
 }

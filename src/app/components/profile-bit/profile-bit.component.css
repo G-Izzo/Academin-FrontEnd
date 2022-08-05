@@ -1,6 +1,6 @@
 .profile-container {
   display: flex;
-  height: 30px;
+  height: 50px;
   width: auto;
 }
 
@@ -16,4 +16,7 @@
 .profile-content {
   background-color: var(--select-color);
   width: 100%;
+  text-align: center;
+  padding: 16px;
+  font-size: 26px;
 }

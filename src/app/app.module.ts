@@ -8,9 +8,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
 import { ProfileBitComponent } from './components/profile-bit/profile-bit.component';
 import { MatIconModule } from '@angular/material/icon';
+import { CompanyExplorerComponent } from './components/company-explorer/company-explorer.component';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [AppComponent, ProfileBitComponent],
+  declarations: [AppComponent, ProfileBitComponent, CompanyExplorerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,6 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     FormsModule,
     MatIconModule,
+    MatTreeModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

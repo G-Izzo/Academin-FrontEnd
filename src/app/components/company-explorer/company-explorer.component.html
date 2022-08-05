@@ -1,0 +1,6 @@
+<p class="element-adder">+ Aggiungi azienda</p>
+<mat-tree [dataSource]="sideMenu">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+    {{ node.companies }}
+  </mat-tree-node>
+</mat-tree>
