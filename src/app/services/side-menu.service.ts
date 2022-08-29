@@ -6,8 +6,6 @@ import { SideMenuNode } from '../components/company-explorer/SideMenuNode.interf
   providedIn: 'root',
 })
 export class SideMenuService {
-  constructor() {}
-
   getSideMenu(): SideMenuNode[] {
     return MOCK_MENU;
   }

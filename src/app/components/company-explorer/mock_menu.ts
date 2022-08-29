@@ -2,6 +2,7 @@ import { SideMenuNode } from './SideMenuNode.interface';
 
 export const MOCK_MENU: SideMenuNode[] = [
   {
+    id: 1,
     name: 'Azienda 1',
     children: [
       { id: 1, name: 'Corso 1' },
@@ -10,9 +11,11 @@ export const MOCK_MENU: SideMenuNode[] = [
     ],
   },
   {
+    id: 2,
     name: 'Azienda 2',
   },
   {
+    id: 3,
     name: 'Azienda 3',
     children: [
       { id: 4, name: 'Corso 1' },
@@ -20,6 +23,7 @@ export const MOCK_MENU: SideMenuNode[] = [
     ],
   },
   {
+    id: 4,
     name: 'Azienda 4',
     children: [
       { id: 6, name: 'Corso 1' },

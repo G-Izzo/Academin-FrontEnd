@@ -1,9 +1,6 @@
-import { FlatTreeControl } from '@angular/cdk/tree';
+import { FlatTreeControl, NestedTreeControl } from '@angular/cdk/tree';
 import { Component } from '@angular/core';
-import {
-  MatTreeFlatDataSource,
-  MatTreeFlattener,
-} from '@angular/material/tree';
+import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { SideMenuNode } from './SideMenuNode.interface';
 import { SideMenuService } from '../../services/side-menu.service';
 
@@ -32,19 +29,9 @@ export class CompanyExplorerComponent {
     };
   };
 
-  menuControl = new FlatTreeControl<FlatNode>(
-    (node) => node.level,
-    (node) => node.expandable
-  );
+  treeControl = new NestedTreeControl<SideMenuNode>((node) => node.children);
 
-  menuFlatter = new MatTreeFlattener(
-    this._transformer,
-    (node) => node.level,
-    (node) => node.expandable,
-    (node) => node.children
-  );
-
-  sideMenu = new MatTreeFlatDataSource(this.menuControl, this.menuFlatter);
+  sideMenu = new MatTreeNestedDataSource<SideMenuNode>();
 
   hasChild = (_: number, node: FlatNode) => node.expandable;
 }
