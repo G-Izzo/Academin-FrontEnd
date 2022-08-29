@@ -4,8 +4,8 @@ import {
   MatTreeFlatDataSource,
   MatTreeFlattener,
 } from '@angular/material/tree';
-import { MOCK_MENU } from './mock_menu';
 import { SideMenuNode } from './SideMenuNode.interface';
+import { SideMenuService } from '../../services/side-menu.service';
 
 interface FlatNode {
   id?: number;
@@ -20,6 +20,10 @@ interface FlatNode {
   styleUrls: ['./company-explorer.component.css'],
 })
 export class CompanyExplorerComponent {
+  constructor(private sideMenuService: SideMenuService) {
+    this.sideMenu.data = sideMenuService.getSideMenu();
+  }
+
   private _transformer = (node: SideMenuNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
@@ -41,10 +45,6 @@ export class CompanyExplorerComponent {
   );
 
   sideMenu = new MatTreeFlatDataSource(this.menuControl, this.menuFlatter);
-
-  constructor() {
-    this.sideMenu.data = MOCK_MENU;
-  }
 
   hasChild = (_: number, node: FlatNode) => node.expandable;
 }
