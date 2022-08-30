@@ -11,6 +11,10 @@
   align-items: initial;
 } */
 
+.company-content {
+  padding-left: 20px;
+}
+
 .element-adder {
   color: #a3a3a3;
 }
