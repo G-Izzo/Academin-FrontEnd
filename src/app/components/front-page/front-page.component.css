@@ -1,0 +1,17 @@
+.title {
+  text-align: center;
+}
+
+.text-container {
+  display: flex;
+  padding: 16px;
+}
+
+.text-container div {
+  text-align: center;
+  font-size: 14px;
+
+  width: 300px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

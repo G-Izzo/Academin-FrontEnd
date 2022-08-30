@@ -11,9 +11,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { CompanyExplorerComponent } from './components/company-explorer/company-explorer.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatButtonModule } from '@angular/material/button';
+import { FrontPageComponent } from './components/front-page/front-page.component';
 
 @NgModule({
-  declarations: [AppComponent, ProfileBitComponent, CompanyExplorerComponent],
+  declarations: [AppComponent, ProfileBitComponent, CompanyExplorerComponent, FrontPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

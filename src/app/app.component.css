@@ -3,14 +3,15 @@
   height: 100%;
 }
 
-.side-menu {
-  /* display: flex;
-  flex-direction: column; */
+/* .app-container > div {
+  flex: 1 0;
+} */
 
+.side-menu {
   color: white;
   font-size: 18px;
   background-color: var(--main-color);
-  /* flex-basis: 250px; */
+  flex: 0 0 250px;
 }
 
 .side-menu > *:not(app-profile-bit) {
@@ -31,4 +32,8 @@
 .logo + div {
   font-size: 32px;
   padding-top: 0.5em;
+}
+
+.app-interface {
+  flex: 0 1 calc(100vw - 250px) !important;
 }
