@@ -1,15 +1,11 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { Component } from '@angular/core';
-import { MatTreeNestedDataSource } from '@angular/material/tree';
+import {
+  MatNestedTreeNode,
+  MatTreeNestedDataSource,
+} from '@angular/material/tree';
 import { SideMenuNode } from './SideMenuNode.interface';
 import { SideMenuService } from '../../services/side-menu.service';
-
-interface FlatNode {
-  id?: number;
-  expandable: boolean;
-  name: string;
-  level: number;
-}
 
 @Component({
   selector: 'app-company-explorer',
@@ -25,5 +21,6 @@ export class CompanyExplorerComponent {
 
   sideMenu = new MatTreeNestedDataSource<SideMenuNode>();
 
-  hasChild = (_: number, node: FlatNode) => node.expandable;
+  isCompany = (_: number, node: MatNestedTreeNode<SideMenuNode>) =>
+    node.level == 0;
 }

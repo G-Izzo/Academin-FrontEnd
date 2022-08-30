@@ -3,23 +3,16 @@
   height: 100%;
 }
 
-/* .app-container > div {
-  flex: 1 0;
-} */
-
-.side-menu {
+.sidebar {
   color: white;
   font-size: 18px;
   background-color: var(--main-color);
   flex: 0 0 250px;
 }
 
-.side-menu > *:not(app-profile-bit) {
-  padding: 16px;
-}
-
 .logo-container {
   display: flex;
+  padding: 16px;
 }
 
 .logo {
@@ -34,6 +27,18 @@
   padding-top: 0.5em;
 }
 
+.sidebar-footer > button {
+  background-color: var(--main-color);
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+}
+
 .app-interface {
-  flex: 0 1 calc(100vw - 250px) !important;
+  flex: 0 1 calc(100vw - 250px);
+}
+
+hr {
+  color: white;
+  width: 90%;
 }

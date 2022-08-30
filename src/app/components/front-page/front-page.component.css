@@ -1,17 +1,23 @@
 .title {
+  display: block;
+  height: 128px;
   text-align: center;
+  padding-top: 32px;
+  font-size: 48px;
 }
 
 .text-container {
+  padding: 0 16px;
   display: flex;
-  padding: 16px;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .text-container div {
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
 
+  padding: 0 32px;
+  padding-bottom: 32px;
   width: 300px;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
