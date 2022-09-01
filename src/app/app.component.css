@@ -15,6 +15,10 @@
   padding: 16px;
 }
 
+.logo-container:hover {
+  cursor: pointer;
+}
+
 .logo {
   font-size: 52px;
   vertical-align: baseline;

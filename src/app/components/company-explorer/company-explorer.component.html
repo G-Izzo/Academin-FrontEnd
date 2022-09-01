@@ -4,7 +4,12 @@
 
 <mat-tree [dataSource]="sideMenu" [treeControl]="treeControl">
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
-    <button mat-flat-button disableRipple matTreeNodeToggle>
+    <button
+      routerLink="/course/{{ node.id }}"
+      mat-flat-button
+      disableRipple
+      matTreeNodeToggle
+    >
       {{ node.name }}
     </button>
   </mat-tree-node>
