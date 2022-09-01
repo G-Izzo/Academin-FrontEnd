@@ -11,7 +11,9 @@ import { SideMenuService } from '../../services/side-menu.service';
 })
 export class CompanyExplorerComponent {
   constructor(private sideMenuService: SideMenuService) {
-    this.sideMenu.data = sideMenuService.getSideMenu();
+    sideMenuService
+      .getSideMenu()
+      .subscribe((nodes) => (this.sideMenu.data = nodes));
   }
 
   treeControl = new NestedTreeControl<SideMenuNode>((node) => node.children);

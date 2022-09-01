@@ -13,9 +13,19 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatButtonModule } from '@angular/material/button';
 import { FrontPageComponent } from './components/front-page/front-page.component';
 import { CourseInterfaceComponent } from './components/course-interface/course-interface.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [AppComponent, ProfileBitComponent, CompanyExplorerComponent, FrontPageComponent, CourseInterfaceComponent],
+  declarations: [
+    AppComponent,
+    ProfileBitComponent,
+    CompanyExplorerComponent,
+    FrontPageComponent,
+    CourseInterfaceComponent,
+    SearchBarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,6 +35,8 @@ import { CourseInterfaceComponent } from './components/course-interface/course-i
     MatIconModule,
     MatTreeModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
