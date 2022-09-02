@@ -1,3 +1,9 @@
+export interface Company {
+  id: number;
+  name: string;
+  courses?: Course[];
+}
+
 export interface Course {
   id: number;
   name: string;

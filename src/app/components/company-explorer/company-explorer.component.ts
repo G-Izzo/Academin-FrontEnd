@@ -1,7 +1,7 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
-import { SideMenuNode } from './SideMenuNode.interface';
+import { Company, Course } from './node.model';
 import { SideMenuService } from '../../services/side-menu.service';
 
 @Component({
@@ -9,18 +9,22 @@ import { SideMenuService } from '../../services/side-menu.service';
   templateUrl: './company-explorer.component.html',
   styleUrls: ['./company-explorer.component.css'],
 })
-export class CompanyExplorerComponent {
-  constructor(private sideMenuService: SideMenuService) {
-    sideMenuService
+export class CompanyExplorerComponent implements OnInit {
+  @Input() course!: Course;
+
+  constructor(private sideMenuService: SideMenuService) {}
+
+  ngOnInit() {
+    this.sideMenuService
       .getSideMenu()
       .subscribe((nodes) => (this.sideMenu.data = nodes));
   }
 
-  treeControl = new NestedTreeControl<SideMenuNode>((node) => node.children);
+  treeControl = new NestedTreeControl<Company>((node) => node.courses);
 
-  sideMenu = new MatTreeNestedDataSource<SideMenuNode>();
+  sideMenu = new MatTreeNestedDataSource<Company>();
 
-  isCompany = (index: number, node: SideMenuNode) => {
-    return !!node.children && node.children.length > 0;
+  isCompany = (index: number, node: Company) => {
+    return !!node.courses && node.courses.length > 0;
   };
 }

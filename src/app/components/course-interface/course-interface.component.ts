@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CourseService } from 'src/app/services/course.service';
+import { Course } from '../company-explorer/node.model';
 
 @Component({
   selector: 'app-course-interface',
@@ -7,11 +9,19 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./course-interface.component.css'],
 })
 export class CourseInterfaceComponent implements OnInit {
-  public course_id: number;
+  course_id: number;
+  course!: Course;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private courseService: CourseService
+  ) {
     this.course_id = Number(this.route.snapshot.paramMap.get('id'));
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.courseService.getCourse(this.course_id).subscribe((course: Course) => {
+      this.course = course;
+    });
+  }
 }
