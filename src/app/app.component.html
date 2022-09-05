@@ -1,5 +1,5 @@
 <div class="app-container">
-  <div class="sidebar">
+  <mat-drawer-container class="sidebar">
     <!-- Logo -->
     <div class="logo-container" routerLink="">
       <mat-icon class="logo">book</mat-icon>
@@ -15,7 +15,7 @@
       <br />
       <button mat-flat-button disableRipple>Impostazioni</button>
     </div>
-  </div>
+  </mat-drawer-container>
   <div class="app-interface">
     <app-search-bar></app-search-bar>
     <router-outlet></router-outlet>

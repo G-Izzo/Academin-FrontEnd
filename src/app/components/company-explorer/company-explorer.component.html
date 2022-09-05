@@ -3,7 +3,7 @@
 </button>
 
 <mat-tree [dataSource]="sideMenu" [treeControl]="treeControl">
-  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+  <mat-tree-node class="course" *matTreeNodeDef="let node">
     <button
       routerLink="/course/{{ node.id }}"
       mat-flat-button
@@ -14,19 +14,16 @@
     </button>
   </mat-tree-node>
 
-  <mat-nested-tree-node *matTreeNodeDef="let node; when: isCompany">
-    <div class="mat-tree-node">
-      <div class="node">
-        <button mat-flat-button disableRipple matTreeNodeToggle>
-          {{ node.name }}
-        </button>
-      </div>
-      <div class="node-content">
-        <ng-container
-          matTreeNodeOutlet
-          *ngIf="treeControl.isExpanded(node)"
-        ></ng-container>
-      </div>
-    </div>
+  <mat-nested-tree-node
+    class="company"
+    *matTreeNodeDef="let node; when: isCompany"
+  >
+    <button mat-flat-button disableRipple matTreeNodeToggle>
+      {{ node.name }}
+    </button>
+    <ng-container
+      matTreeNodeOutlet
+      *ngIf="treeControl.isExpanded(node)"
+    ></ng-container>
   </mat-nested-tree-node>
 </mat-tree>

@@ -6,6 +6,7 @@ import { Course } from '../components/company-explorer/node.model';
 })
 export class CourseService {
   getCourse(id: number): Observable<Course> {
-    return of('Sesso pazzo');
+    // TODO: broken method
+    return of();
   }
 }

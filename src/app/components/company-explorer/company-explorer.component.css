@@ -1,20 +1,21 @@
 .mat-tree *,
 .element-adder {
+  display: block;
   background-color: var(--main-color);
   color: white;
   font-size: 18px;
   font-weight: 400;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.mat-tree-node {
-  display: block;
-}
-
-.node {
+.company button {
   width: 100%;
 }
 
-.node-content {
+.company ng-container {
   padding-left: 20px;
 }
 
