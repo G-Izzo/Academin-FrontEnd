@@ -6,13 +6,14 @@ export const MOCK_MENU: Company[] = [
     name: 'IBS',
     courses: [
       { id: 1, name: 'IBS Academy' },
-      { id: 2, name: 'Minecraft Building Course' },
+      { id: 2, name: 'Minecraft Building Course - Advanced' },
       { id: 3, name: 'Corso 3' },
     ],
   },
   {
     id: 2,
     name: 'Azienda 2',
+    courses: [],
   },
   {
     id: 3,

@@ -5,18 +5,21 @@
   color: white;
   font-size: 18px;
   font-weight: 400;
-
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  min-height: auto;
 }
 
-.company button {
-  width: 100%;
+.company {
+  padding-bottom: 8px;
 }
 
-.company ng-container {
-  padding-left: 20px;
+.course {
+  margin-left: 19px;
+  border-left: 1px solid white;
+}
+
+.course[aria-expanded="true"],
+.course[aria-expanded="true"] button {
+  background-color: var(--select-color);
 }
 
 .element-adder {

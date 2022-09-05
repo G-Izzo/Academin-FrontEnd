@@ -1,5 +1,5 @@
-<div class="app-container">
-  <mat-drawer-container class="sidebar">
+<mat-drawer-container class="app-container">
+  <mat-drawer class="sidebar" mode="side" opened>
     <!-- Logo -->
     <div class="logo-container" routerLink="">
       <mat-icon class="logo">book</mat-icon>
@@ -15,11 +15,11 @@
       <br />
       <button mat-flat-button disableRipple>Impostazioni</button>
       <br />
-      <button mat-flat-button disableRipple>Scarica Excell</button>
+      <button mat-flat-button disableRipple>Scarica Excel</button>
     </div>
-  </mat-drawer-container>
-  <div class="app-interface">
+  </mat-drawer>
+  <mat-drawer-container class="app-interface">
     <app-search-bar></app-search-bar>
     <router-outlet></router-outlet>
-  </div>
-</div>
+  </mat-drawer-container>
+</mat-drawer-container>

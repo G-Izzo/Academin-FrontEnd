@@ -24,7 +24,7 @@ export class CompanyExplorerComponent implements OnInit {
 
   sideMenu = new MatTreeNestedDataSource<Company>();
 
-  isCompany = (index: number, node: Company) => {
-    return !!node.courses && node.courses.length > 0;
+  isCompany = (index: number, node: Company | Course) => {
+    return !!(node as Company).courses;
   };
 }
