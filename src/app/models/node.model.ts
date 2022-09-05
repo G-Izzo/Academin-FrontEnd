@@ -1,3 +1,5 @@
+import { Lesson } from "./lessons.model";
+
 export interface Company {
   id: number;
   name: string;
@@ -7,6 +9,7 @@ export interface Company {
 export interface Course {
   id: number;
   name: string;
-  starting_date?: Date;
-  ending_date?: Date;
+  starting_date: Date;
+  ending_date: Date;
+  lessons?:Lesson[];
 }

@@ -15,7 +15,9 @@
       <br />
       <button mat-flat-button disableRipple>Impostazioni</button>
       <br />
-      <button mat-flat-button disableRipple>Scarica Excel</button>
+      <button mat-flat-button disableRipple (click)="downloadExcel()">
+        Scarica Excel
+      </button>
     </div>
   </mat-drawer>
   <mat-drawer-container class="app-interface">
