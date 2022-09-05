@@ -1,7 +1,7 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
-import { Company, Course } from './node.model';
+import { Company, Course } from '../../models/node.model';
 import { SideMenuService } from '../../services/side-menu.service';
 
 @Component({
