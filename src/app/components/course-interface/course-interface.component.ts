@@ -9,22 +9,20 @@ import { Course } from '../../models/node.model';
   styleUrls: ['./course-interface.component.css'],
 })
 export class CourseInterfaceComponent implements OnInit {
-  course_id: number;
-  course!: Course | null;
+  course_id!: number;
+  course!: Course;
 
   constructor(
     private route: ActivatedRoute,
     private courseService: CourseService
-  ) {
-    this.course_id = Number(this.route.snapshot.paramMap.get('id'));
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.courseService
-      .getCourseByCompany(1, this.course_id)
-      .subscribe((c: Course | null) => {
-        console.log(c);
-        this.course = c;
-      });
+    this.course_id = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.courseService.getCourseById(1).subscribe((c) => {
+      console.log(this.course_id);
+      this.course = c;
+    });
   }
 }

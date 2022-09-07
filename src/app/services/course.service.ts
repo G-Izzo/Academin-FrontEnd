@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, toArray } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { MOCK_MENU } from '../components/company-explorer/mock_menu';
 import { Company, Course } from '../models/node.model';
 @Injectable({
@@ -27,11 +27,11 @@ export class CourseService {
     );
   }
 
-  getCourseById(course_id: number): Observable<Course> {
+  getCourseById(course_id: number) {
     return of(
-      MOCK_MENU.map((com) => com.courses ?? [this.default_course])
+      MOCK_MENU.map((c) => c.courses?.flat())
         .flat()
-        .filter((c) => c.id === course_id)[0]
+        .filter((c) => c?.id === course_id)
     );
   }
 }

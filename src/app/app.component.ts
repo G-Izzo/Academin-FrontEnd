@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Course } from './models/node.model';
 import { CourseService } from './services/course.service';
 import { XlsxService } from './services/xlsx.service';
@@ -11,7 +11,7 @@ import { XlsxService } from './services/xlsx.service';
 export class AppComponent {
   title = 'Registro-FrontEnd';
 
-  constructor(private xlxs: XlsxService, private courseHttp: CourseService) {}
+  constructor(private xlsx: XlsxService, private courseHttp: CourseService) {}
 
   //downloadExcel(id:number){
   downloadExcel() {
@@ -90,6 +90,6 @@ export class AppComponent {
       ],
     };
     //let course:Course=this.courseHttp.getCourse(id);
-    this.xlxs.downloadExcel(course);
+    this.xlsx.downloadExcel(course);
   }
 }
