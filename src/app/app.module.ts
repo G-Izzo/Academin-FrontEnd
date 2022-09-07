@@ -16,6 +16,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTreeModule } from '@angular/material/tree';
 import { ProfileBitComponent } from './components/profile-bit/profile-bit.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import {} from 'jasmine';
 
 @NgModule({
   declarations: [
