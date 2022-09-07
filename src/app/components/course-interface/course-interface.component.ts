@@ -10,7 +10,7 @@ import { Course } from '../../models/node.model';
 })
 export class CourseInterfaceComponent implements OnInit {
   course_id: number;
-  course!: Course;
+  course!: Course | null;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,8 +20,11 @@ export class CourseInterfaceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.courseService.getCourse(this.course_id).subscribe((course: Course) => {
-      this.course = course;
-    });
+    this.courseService
+      .getCourseByCompany(1, this.course_id)
+      .subscribe((c: Course | null) => {
+        console.log(c);
+        this.course = c;
+      });
   }
 }

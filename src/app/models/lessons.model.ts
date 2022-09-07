@@ -1,15 +1,15 @@
-import { Student } from "./student.model";
+import { Student } from './student.model';
 
-export interface Lesson{
-    id:number;
-    date:Date;
-    topics:String;
-    students:lesson_student[];
+export interface Lesson {
+  id: number;
+  date: Date;
+  topics: String;
+  students: lesson_student[];
 }
 
-interface lesson_student{
-    join_time:Date;
-    exit_time:Date;
-    daily_grade:number;
-    student:Student;
+interface lesson_student {
+  join_time: Date;
+  exit_time: Date;
+  daily_grade: number;
+  student: Student;
 }

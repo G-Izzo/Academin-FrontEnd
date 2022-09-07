@@ -9,15 +9,18 @@ import { XlsxService } from './services/xlsx.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  @Output() selectedCourseEvent = new EventEmitter<Course>();
-
   title = 'Registro-FrontEnd';
 
-  constructor(private xlxs:XlsxService, private courseHttp:CourseService){}
+  constructor(private xlxs: XlsxService, private courseHttp: CourseService) {}
 
   //downloadExcel(id:number){
-  downloadExcel(){
-    let course:Course={id:1, name:"Azienda 1", starting_date:new Date("2022-08-03"), ending_date:new Date("2023-06-30")};
+  downloadExcel() {
+    let course: Course = {
+      id: 1,
+      name: 'Azienda 1',
+      starting_date: new Date('2022-08-03'),
+      ending_date: new Date('2023-06-30'),
+    };
     //let course:Course=this.courseHttp.getCourse(id);
     this.xlxs.downloadExcel(course);
   }
