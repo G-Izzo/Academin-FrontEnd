@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Cell, Column } from 'exceljs';
 const Excel = require('exceljs');
 import * as fs from 'file-saver';
 import { Lesson, lesson_student } from '../models/lessons.model';
 import { Course } from '../models/node.model';
-import { Student } from '../models/student.model';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +46,21 @@ export class XlsxService {
       });
     }
 
+    let dataMax: number[];
+    let max: number;
+    worksheet.columns.forEach((column: Column) => {
+        dataMax = [];
+        column.eachCell({includeEmpty: false}, (cell: Cell) => {
+            dataMax.push(cell.value?.toString().length || 0);
+        });
+        max = Math.max(...dataMax);
+        column.width = max;
+        column.width = max < 3 ? 3 : max;
+    });
+
+
+
+
     workbook.xlsx.writeBuffer().then((data: BlobPart) => {
       let blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       fs.saveAs(blob, 'Consuntivo '+fname+'.xlsx');
@@ -62,7 +77,10 @@ export class XlsxService {
         mesi.push(`${MESI[start.getMonth()]}-${this.estraiCifre(start.getFullYear())}`);
       }
       else if(start.getDate()==1)
+      {
+        mesi.push("T.O.")
         mesi.push(`${MESI[start.getMonth()]}-${this.estraiCifre(start.getFullYear())}`);
+      }        
       else
         mesi.push("");
     }
@@ -73,7 +91,11 @@ export class XlsxService {
     let start= new Date(starting_date.getTime());
     let numbers = [];
     for (;start.getTime() <= ending_date.getTime(); start.setDate(start.getDate() + 1))
+    {
+      if(start.getDate()==1)
+        numbers.push("")
       numbers.push(start.getDate());
+    }      
     return numbers;
   }
 
@@ -82,7 +104,11 @@ export class XlsxService {
     let days = [];
     let GIORNI=["L", "M", "M", "G", "V", "S", "D"]
     for (;start.getTime() <= ending_date.getTime(); start.setDate(start.getDate() + 1))
+    {
+      if(start.getDate()==1)
+        days.push("")
       days.push(GIORNI[start.getDay()]);
+    }
     return days;
   }
 
