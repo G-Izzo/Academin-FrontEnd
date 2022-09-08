@@ -20,9 +20,8 @@ export class CourseInterfaceComponent implements OnInit {
   ngOnInit(): void {
     this.course_id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.courseService.getCourseById(1).subscribe((c) => {
-      console.log(this.course_id);
-      this.course = c;
+    this.courseService.getCourseById(1).subscribe((course) => {
+      console.log(course);
     });
   }
 }

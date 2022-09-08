@@ -21,17 +21,16 @@ export class CourseService {
     company_id: number,
     course_id: number
   ): Observable<Course> {
+    let company = MOCK_MENU.find((c) => c.id === company_id);
+    if (company == undefined) return of(this.default_course);
+
     return of(
-      MOCK_MENU[company_id].courses?.filter((c) => c.id === course_id)[0] ??
+      company.courses?.filter((course) => course.id === course_id)[0] ??
         this.default_course
     );
   }
 
   getCourseById(course_id: number) {
-    return of(
-      MOCK_MENU.map((c) => c.courses?.flat())
-        .flat()
-        .filter((c) => c?.id === course_id)
-    );
+    return of(MOCK_MENU.map((company) => company.courses ?? null));
   }
 }
