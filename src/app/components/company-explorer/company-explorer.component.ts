@@ -1,5 +1,5 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { CourseService } from 'src/app/services/course.service';
 import { Company, Course } from '../../models/node.model';
@@ -10,8 +10,6 @@ import { Company, Course } from '../../models/node.model';
   styleUrls: ['./company-explorer.component.css'],
 })
 export class CompanyExplorerComponent implements OnInit {
-  @Input() course!: Course;
-
   constructor(private courseService: CourseService) {}
 
   ngOnInit() {

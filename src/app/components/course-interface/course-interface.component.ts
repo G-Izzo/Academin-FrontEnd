@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from 'src/app/services/course.service';
-import { Course } from '../../models/node.model';
+import { CourseContainer, Course } from '../../models/node.model';
 
 @Component({
   selector: 'app-course-interface',
@@ -10,18 +10,22 @@ import { Course } from '../../models/node.model';
 })
 export class CourseInterfaceComponent implements OnInit {
   course_id!: number;
-  course!: Course;
+  courseContainer!: CourseContainer;
 
   constructor(
     private route: ActivatedRoute,
     private courseService: CourseService
   ) {}
 
-  ngOnInit(): void {
-    this.course_id = Number(this.route.snapshot.paramMap.get('id'));
+  ngOnInit(): void {}
 
-    this.courseService.getCourseById(1).subscribe((course) => {
-      console.log(course);
+  ngDoCheck(): void {
+    console.log(this.route.toString());
+
+    this.course_id = Number(this.route.snapshot.paramMap.get('course_id'));
+
+    this.courseService.getCourseById(this.course_id).subscribe((course) => {
+      this.courseContainer = course;
     });
   }
 }
