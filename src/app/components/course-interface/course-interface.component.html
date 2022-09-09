@@ -1,1 +1,10 @@
 <h1>{{ courseContainer.course.name }} - {{ courseContainer.name }}</h1>
+<button mat-flat-button (click)="openCoursePage(1)">Studenti</button>
+<button mat-flat-button (click)="openCoursePage(2)">Registro</button>
+<div class="breaker"></div>
+<app-course-students
+  *ngIf="open_page === 1; else registry"
+></app-course-students>
+<ng-template #registry>
+  <app-course-registry></app-course-registry
+></ng-template>

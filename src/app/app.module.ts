@@ -17,6 +17,8 @@ import { MatTreeModule } from '@angular/material/tree';
 import { ProfileBitComponent } from './components/profile-bit/profile-bit.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import {} from 'jasmine';
+import { CourseStudentsComponent } from './components/course-students/course-students.component';
+import { CourseRegistryComponent } from './components/course-registry/course-registry.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import {} from 'jasmine';
     FrontPageComponent,
     CourseInterfaceComponent,
     SearchBarComponent,
+    CourseStudentsComponent,
+    CourseRegistryComponent,
   ],
   imports: [
     BrowserModule,
