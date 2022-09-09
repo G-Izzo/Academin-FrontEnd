@@ -6,10 +6,21 @@ export interface Company {
   courses?: Course[];
 }
 
-export interface CourseContainer {
+export class CourseContainer {
   id: number;
   name: string;
   course: Course;
+
+  constructor(company: Company, iCourse: number) {
+    this.id = company.id;
+    this.name = company.name;
+    this.course = company.courses?.at(iCourse) ?? {
+      id: 0,
+      name: 'Course name',
+      starting_date: new Date(0),
+      ending_date: new Date(0),
+    };
+  }
 }
 
 export interface Course {

@@ -4,7 +4,7 @@ import { CourseInterfaceComponent } from './components/course-interface/course-i
 import { FrontPageComponent } from './components/front-page/front-page.component';
 
 const routes: Routes = [
-  { path: 'course/:course_id', component: CourseInterfaceComponent },
+  { path: 'course/:courseID', component: CourseInterfaceComponent },
   { path: '', component: FrontPageComponent },
   { path: '*', redirectTo: '', pathMatch: 'full' },
 ];

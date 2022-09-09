@@ -6,7 +6,7 @@
   <mat-tree-node
     class="course"
     *matTreeNodeDef="let node"
-    [ngClass]="selected_course_id === node.id ? 'selected' : ''"
+    [ngClass]="selectedCourseID === node.id ? 'selected' : ''"
   >
     <button
       routerLink="/course/{{ node.id }}"

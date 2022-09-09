@@ -11,7 +11,7 @@ import { Company, Course } from '../../models/node.model';
   styleUrls: ['./company-explorer.component.css'],
 })
 export class CompanyExplorerComponent implements OnInit {
-  selected_course_id: number = 0;
+  selectedCourseID: number = 0;
 
   constructor(
     private courseService: CourseService,
@@ -20,8 +20,8 @@ export class CompanyExplorerComponent implements OnInit {
 
   ngOnInit() {
     // TODO: make the selected course appear 'selected' even with a page refresh
-    this.selected_course_id = Number(
-      this.route.snapshot.paramMap.get('course_id')
+    this.selectedCourseID = Number(
+      this.route.snapshot.paramMap.get('courseID')
     );
 
     this.courseService
@@ -38,6 +38,6 @@ export class CompanyExplorerComponent implements OnInit {
   };
 
   selectCourse = (index: number) => {
-    this.selected_course_id = index;
+    this.selectedCourseID = index;
   };
 }

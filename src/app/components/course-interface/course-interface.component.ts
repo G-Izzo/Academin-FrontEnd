@@ -14,23 +14,19 @@ export enum CoursePage {
   styleUrls: ['./course-interface.component.css'],
 })
 export class CourseInterfaceComponent implements OnInit {
-  course_id!: number;
   courseContainer!: CourseContainer;
   open_page: CoursePage = CoursePage.STUDENTS;
 
-  constructor(
-    private route: ActivatedRoute,
-    private courseService: CourseService
-  ) {}
+  constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
-    /* Empty */
+    this.courseService.displayedCourse().subscribe((course) => {
+      this.courseContainer = course;
+    });
   }
 
-  ngDoCheck(): void {
-    this.course_id = Number(this.route.snapshot.paramMap.get('course_id'));
-
-    this.courseService.getCourseById(this.course_id).subscribe((course) => {
+  ngOnChanges(): void {
+    this.courseService.displayedCourse().subscribe((course) => {
       this.courseContainer = course;
     });
   }
