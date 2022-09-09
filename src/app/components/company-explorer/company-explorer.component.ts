@@ -10,6 +10,8 @@ import { Company, Course } from '../../models/node.model';
   styleUrls: ['./company-explorer.component.css'],
 })
 export class CompanyExplorerComponent implements OnInit {
+  selected_course_id: number = 0;
+
   constructor(private courseService: CourseService) {}
 
   ngOnInit() {
@@ -22,7 +24,11 @@ export class CompanyExplorerComponent implements OnInit {
 
   sideMenu = new MatTreeNestedDataSource<Company>();
 
-  isCompany = (index: number, node: Company | Course) => {
+  isCompany = (_: number, node: Company | Course) => {
     return !!(node as Company).courses;
+  };
+
+  selectCourse = (index: number) => {
+    this.selected_course_id = index;
   };
 }

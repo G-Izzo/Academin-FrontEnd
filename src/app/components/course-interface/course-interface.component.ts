@@ -17,11 +17,11 @@ export class CourseInterfaceComponent implements OnInit {
     private courseService: CourseService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    /* Empty */
+  }
 
   ngDoCheck(): void {
-    console.log(this.route.toString());
-
     this.course_id = Number(this.route.snapshot.paramMap.get('course_id'));
 
     this.courseService.getCourseById(this.course_id).subscribe((course) => {

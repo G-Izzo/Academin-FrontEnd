@@ -3,12 +3,17 @@
 </button>
 
 <mat-tree [dataSource]="sideMenu" [treeControl]="treeControl">
-  <mat-tree-node class="course" *matTreeNodeDef="let node">
+  <mat-tree-node
+    class="course"
+    *matTreeNodeDef="let node"
+    [ngClass]="selected_course_id === node.id ? 'selected' : ''"
+  >
     <button
       routerLink="/course/{{ node.id }}"
       mat-flat-button
       disableRipple
       matTreeNodeToggle
+      (click)="selectCourse(node.id)"
     >
       {{ node.name }}
     </button>

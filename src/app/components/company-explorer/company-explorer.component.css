@@ -17,9 +17,9 @@
   border-left: 1px solid white;
 }
 
-.course[aria-expanded="true"],
-.course[aria-expanded="true"] button {
-  background-color: var(--select-color);
+.selected,
+.selected button {
+  background-color: var(--select-color) !important;
 }
 
 .element-adder {
