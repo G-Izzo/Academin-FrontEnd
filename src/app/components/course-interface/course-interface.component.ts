@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from 'src/app/services/course.service';
-import { CourseContainer, Course } from '../../models/node.model';
+import { CourseContainer } from '../../models/node.model';
 
 @Component({
   selector: 'app-course-interface',
