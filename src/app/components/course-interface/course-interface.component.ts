@@ -17,19 +17,21 @@ export class CourseInterfaceComponent implements OnInit {
   courseContainer!: CourseContainer;
   open_page: CoursePage = CoursePage.STUDENTS;
 
-  constructor(private courseService: CourseService) {}
+  constructor(
+    private courseService: CourseService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.courseService.displayedCourse().subscribe((course) => {
+    let courseID = Number(this.route.snapshot.paramMap.get('courseID'));
+    console.log(this.courseService.currentCourse.asObservable());
+
+    /* this.courseService.currentCourse.subscribe((course) => {
       this.courseContainer = course;
-    });
+    }); */
   }
 
-  ngOnChanges(): void {
-    this.courseService.displayedCourse().subscribe((course) => {
-      this.courseContainer = course;
-    });
-  }
+  ngOnChanges(): void {}
 
   openCoursePage(page: CoursePage): void {
     this.open_page = page;
