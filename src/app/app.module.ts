@@ -19,6 +19,9 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import {} from 'jasmine';
 import { CourseStudentsComponent } from './components/course-students/course-students.component';
 import { CourseRegistryComponent } from './components/course-registry/course-registry.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
+
 
 @NgModule({
   declarations: [
@@ -42,6 +45,8 @@ import { CourseRegistryComponent } from './components/course-registry/course-reg
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatMomentDateModule
   ],
   providers: [],
   bootstrap: [AppComponent],

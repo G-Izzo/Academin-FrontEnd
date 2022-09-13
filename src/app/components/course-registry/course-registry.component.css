@@ -1,0 +1,10 @@
+.parent
+{
+   display:flex;
+
+}
+
+.child-two
+{       
+    justify-content: flex-end;
+}

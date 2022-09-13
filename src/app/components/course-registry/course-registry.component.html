@@ -1,1 +1,17 @@
-<p>course-registry works!</p>
+<div class="parent">
+
+   <div class="child-one"><p>09/09/2022</p></div> 
+
+   <div class="child-two">
+    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Seleziona una data</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+   </mat-form-field>
+   </div>
+
+</div>
