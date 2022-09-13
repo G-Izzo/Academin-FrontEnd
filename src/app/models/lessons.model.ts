@@ -8,8 +8,8 @@ export interface Lesson {
 }
 
 export interface lesson_student {
-  join_time?: Date;
-  exit_time?: Date;
+  join_time: Date;
+  exit_time: Date;
   daily_grade: number;
   student: Student;
 }
