@@ -38,7 +38,7 @@ export class XlsxService {
       students=this.listaStudenti(course.lessons);
       console.log(students);
       
-      righeVoti=this.generaRigheVoti(course.lessons, students, course.starting_date);
+      righeVoti=this.generaRigheVoti(course.starting_date,course.lessons, students, course.starting_date, course.ending_date);
       console.log(righeVoti);
       
       righeVoti.forEach(riga=>{
@@ -57,9 +57,6 @@ export class XlsxService {
         column.width = max;
         column.width = max < 3 ? 3 : max;
     });
-
-
-
 
     workbook.xlsx.writeBuffer().then((data: BlobPart) => {
       let blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
@@ -84,6 +81,7 @@ export class XlsxService {
       else
         mesi.push("");
     }
+    mesi.push("T.O.")
     return mesi;
   }
 
@@ -129,25 +127,43 @@ export class XlsxService {
     return studenti;
   }
 
-  generaRigheVoti(lessons:Lesson[], students:lesson_student[], ultimaData:Date){
+  //TODO Aggiungere OT finali, allineare al entro e in mezzo, fixare il posizionamento dei voti
+  generaRigheVoti(dataInizio:Date ,lessons:Lesson[], students:lesson_student[], ultimaData:Date, dataFine:Date){
     let righeVoti: any[][]=[];
     students.forEach(student=>{
       let studente:String[]=[`${student.student.name} ${student.student.surname}`];
+      let scroll=new Date(dataInizio);
+      let totaleOre=0;
       lessons.forEach(lesson=>{
-        this.aggiungiSpazio(studente, this.calcolaDifferenza(new Date(lesson.date), ultimaData));
-        ultimaData = new Date(lesson.date);
         let flag=true;
+        while(scroll.getTime()<lesson.date.getTime()){
+          scroll.setDate(scroll.getDate()+1);
+          if(scroll.getDate()==new Date(scroll.getFullYear(), scroll.getMonth()+1, 0).getDate())
+            studente.push(totaleOre.toString());
+          else
+            studente.push("");
+        }
         lesson.students.forEach(lesson_student=>{
           if(lesson_student.student.id==student.student.id)
           {
             studente.push(lesson_student.daily_grade.toString());
             flag=false;
             ultimaData=lesson.date;
+            if(lesson_student.exit_time!=undefined&&lesson_student.join_time!=undefined)
+            {
+              totaleOre+=lesson_student.exit_time.getHours()-lesson_student.join_time.getHours();       
+            }              
           }
         })
         if(flag)
-          this.aggiungiSpazio(studente, 1);
+          studente.push("");
       })
+      while(scroll.getTime()<dataFine.getTime()){
+        scroll.setDate(scroll.getDate()+1);
+        if(scroll.getDate()==new Date(scroll.getFullYear(), scroll.getMonth()+1, 0).getDate())
+          studente.push("0");
+        studente.push("");
+      }
       righeVoti.push(studente);
     });
     return righeVoti;
@@ -166,7 +182,5 @@ export class XlsxService {
     let cifre=anno%10;
     anno=Math.round(anno/=10);
     return (anno%10)*10+cifre;    
-  }
-
-  
+  }  
 }

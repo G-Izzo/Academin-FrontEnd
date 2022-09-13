@@ -23,23 +23,31 @@ export class AppComponent {
       lessons: [
         {
           id: 1,
-          date: new Date('2022-08-03'),
+          date: new Date('2022-08-04'),
           students: [
             {
               student: { id: 1, name: 'Nome 1', surname: 'Cognome 1' },
               daily_grade: 5,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
             {
               student: { id: 2, name: 'Nome 2', surname: 'Cognome 2' },
               daily_grade: 2,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
             {
               student: { id: 3, name: 'Nome 3', surname: 'Cognome 3' },
               daily_grade: 4,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
             {
               student: { id: 4, name: 'Nome 4', surname: 'Cognome 4' },
               daily_grade: 4,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
           ],
         },
@@ -50,40 +58,56 @@ export class AppComponent {
             {
               student: { id: 2, name: 'Nome 2', surname: 'Cognome 2' },
               daily_grade: 1,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
             {
               student: { id: 4, name: 'Nome 4', surname: 'Cognome 4' },
               daily_grade: 5,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
             {
               student: { id: 5, name: 'Nome 5', surname: 'Cognome 5' },
               daily_grade: 3,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
             {
               student: { id: 7, name: 'Nome 7', surname: 'Cognome 7' },
               daily_grade: 4,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
           ],
         },
         {
           id: 2,
-          date: new Date('2022-08-20'),
+          date: new Date('2022-09-20'),
           students: [
             {
               student: { id: 1, name: 'Nome 1', surname: 'Cognome 1' },
               daily_grade: 3,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
             {
               student: { id: 2, name: 'Nome 2', surname: 'Cognome 2' },
               daily_grade: 1,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
             {
               student: { id: 3, name: 'Nome 3', surname: 'Cognome 3' },
               daily_grade: 5,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
             {
               student: { id: 7, name: 'Nome 7', surname: 'Cognome 7' },
               daily_grade: 4,
+              join_time: new Date('2022-08-04 16:00:00'),
+              exit_time: new Date('2022-08-04 18:00:00')
             },
           ],
         },
