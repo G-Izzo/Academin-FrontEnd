@@ -22,14 +22,7 @@ export class CourseInterfaceComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
-    let courseID = Number(this.route.snapshot.paramMap.get('courseID'));
-    console.log(this.courseService.currentCourse.asObservable());
-
-    /* this.courseService.currentCourse.subscribe((course) => {
-      this.courseContainer = course;
-    }); */
-  }
+  ngOnInit(): void {}
 
   ngOnChanges(): void {}
 
