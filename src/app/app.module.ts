@@ -20,6 +20,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTreeModule } from '@angular/material/tree';
 import { ProfileBitComponent } from './components/profile-bit/profile-bit.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
 import {} from 'jasmine';
 
 @NgModule({
@@ -47,7 +49,7 @@ import {} from 'jasmine';
     MatDatepickerModule,
     MatMomentDateModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
