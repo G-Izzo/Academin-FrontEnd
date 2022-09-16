@@ -3,6 +3,7 @@
 <button mat-flat-button (click)="switchInterface(2)">Registro</button>
 <div class="breaker"></div>
 <app-course-students
+  class="student-container"
   *ngIf="open_page === 1; else registry"
 ></app-course-students>
 <ng-template #registry>

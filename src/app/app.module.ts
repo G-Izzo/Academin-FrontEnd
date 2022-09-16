@@ -22,7 +22,9 @@ import { ProfileBitComponent } from './components/profile-bit/profile-bit.compon
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
 import {} from 'jasmine';
+import { StudentCardComponent } from './components/student-card/student-card.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import {} from 'jasmine';
     SearchBarComponent,
     CourseStudentsComponent,
     CourseRegistryComponent,
+    StudentCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ import {} from 'jasmine';
     MatMomentDateModule,
     MatListModule,
     MatDividerModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
