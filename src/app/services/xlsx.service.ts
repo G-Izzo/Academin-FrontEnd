@@ -127,7 +127,7 @@ export class XlsxService {
     return studenti;
   }
 
-  //TODO Aggiungere OT finali, allineare al entro e in mezzo, fixare il posizionamento dei voti
+  //TODO allineare al entro e in mezzo, fixare il posizionamento dei voti
   generaRigheVoti(dataInizio:Date ,lessons:Lesson[], students:lesson_student[], ultimaData:Date, dataFine:Date){
     let righeVoti: any[][]=[];
     students.forEach(student=>{
