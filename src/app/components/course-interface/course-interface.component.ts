@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CourseService } from 'src/app/services/course.service';
-import { Company, CourseContainer } from '../../models/node.model';
+import { CourseContainer } from '../../models/node.model';
 
 export enum CoursePage {
   STUDENTS = 1,
