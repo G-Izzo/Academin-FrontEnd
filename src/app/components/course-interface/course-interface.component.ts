@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { CourseService } from 'src/app/services/course.service';
-import { CourseContainer } from '../../models/node.model';
+import { Company, CourseContainer } from '../../models/node.model';
 
 export enum CoursePage {
   STUDENTS = 1,
@@ -14,24 +15,27 @@ export enum CoursePage {
   styleUrls: ['./course-interface.component.css'],
 })
 export class CourseInterfaceComponent implements OnInit {
+  courseSubscription!: Subscription;
   courseContainer!: CourseContainer;
   open_page: CoursePage = CoursePage.STUDENTS;
 
-  constructor(private courseService: CourseService) {}
+  constructor(
+    private courseService: CourseService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.courseService.displayedCourse().subscribe((course) => {
-      this.courseContainer = course;
-    });
+    this.courseService.changeCourse(this.route.snapshot.params['courseID']);
+    this.courseSubscription = this.courseService.currentCourse.subscribe(
+      (course) => (this.courseContainer = course)
+    );
   }
 
-  ngOnChanges(): void {
-    this.courseService.displayedCourse().subscribe((course) => {
-      this.courseContainer = course;
-    });
+  ngOnDestroy(): void {
+    this.courseSubscription.unsubscribe();
   }
 
-  openCoursePage(page: CoursePage): void {
+  switchInterface(page: CoursePage): void {
     this.open_page = page;
   }
 }
