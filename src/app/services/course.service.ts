@@ -27,26 +27,20 @@ export class CourseService {
 
   /* Use only to fetch an existing course */
   changeCourse(courseID: number) {
-    console.log('changing course');
-    let company;
+    let company, currentCourseContainer;
     try {
-      console.log('entered try_catch');
-
       company = MOCK_MENU.find(
         (company) =>
-          company.courses !== undefined &&
-          company.courses.some((course, index) => {
-            console.log(index, company.courses);
-
-            return course.id === courseID;
-          })
+          !!company.courses &&
+          company.courses.length > 0 &&
+          company.courses.some((course) => course.id == courseID)
       );
+      currentCourseContainer = new CourseContainer(company!, courseID);
     } catch (error) {
-      company = MOCK_MENU[0];
+      currentCourseContainer = default_container;
       console.error(error);
     }
 
-    let currentCourseContainer = new CourseContainer(company!, courseID);
     this.courseSource.next(currentCourseContainer);
     console.log(currentCourseContainer);
   }
