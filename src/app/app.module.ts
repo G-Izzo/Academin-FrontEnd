@@ -20,6 +20,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTreeModule } from '@angular/material/tree';
 import { ProfileBitComponent } from './components/profile-bit/profile-bit.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+
 import {} from 'jasmine';
 
 @NgModule({

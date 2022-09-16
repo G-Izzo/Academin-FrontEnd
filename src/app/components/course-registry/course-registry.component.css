@@ -11,15 +11,10 @@ mat-icon
 
 .child-one
 {   
-    flex-direction: row;
+    flex-direction: row;  
     align-self: flex-end;
     justify-content: flex-start;   
     width:350px;   
-}
-
-child-one input
-{
-    font-size:20px;
 }
 
 .child-two
@@ -30,6 +25,21 @@ child-one input
     justify-content: flex-start;
 }
 
+.child-three
+{       
+    flex-direction:column;
+    align-self: flex-end;
+    justify-content: flex-start;
+ 
+}
+
+child-one input
+{
+    font-size:20px;
+}
+
+
+
 p
 {
 font-size:20px;
@@ -37,7 +47,7 @@ font-size:20px;
 
 mat-list
 {
-max-height: 200px;
+max-height: 400px;
 overflow: auto;
 }
 
@@ -48,4 +58,9 @@ mat-divider
 
 ::ng-deep .mat-form-field-underline {
     display: none;
+}
+
+::ng-deep .mat-form-field
+{
+    font-size:20px;
 }
