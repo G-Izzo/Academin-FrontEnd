@@ -21,6 +21,7 @@ export class CompanyExplorerComponent implements OnInit {
   ngOnInit() {
     // TODO: make the selected course appear 'selected' even with a page refresh
     this.currentCourseID = Number(this.route.snapshot.paramMap.get('courseID'));
+    // this.courseService.changeCourse(this.currentCourseID);
 
     this.courseService
       .getAllCourses()
@@ -36,7 +37,8 @@ export class CompanyExplorerComponent implements OnInit {
   };
 
   selectCourse = (courseID: number) => {
-    this.currentCourseID = courseID;
+    console.log('selected course:', courseID);
+
     this.courseService.changeCourse(courseID);
   };
 }
