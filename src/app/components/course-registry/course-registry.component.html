@@ -1,17 +1,37 @@
 <div class="parent">
 
-   <div class="child-one"><p>09/09/2022</p></div> 
-
-   <div class="child-two">
-    <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Seleziona una data</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-hint>MM/DD/YYYY</mat-hint>
+  <div class="child-one">  
+    <p><mat-icon matListIcon>today</mat-icon> Seleziona una data: </p>
+    <mat-form-field appearance="fill">
+    <input matInput [matDatepicker]="picker">   
     <mat-datepicker-toggle matSuffix [for]="picker">
       <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
     </mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
    </mat-form-field>
    </div>
+ </div>
+
+
+
+<mat-divider></mat-divider>
+
+<div class="parent">
+
+  <div class="child-two">
+<p><mat-icon matListIcon>assignment</mat-icon> Argomenti del giorno: </p>
+  <mat-list>
+    <mat-list-item><mat-icon>noise_control_off</mat-icon> Topic 1 </mat-list-item>
+    <mat-list-item><mat-icon>noise_control_off</mat-icon>  Topic 2 </mat-list-item>
+    <mat-list-item><mat-icon>noise_control_off</mat-icon>  Topic 3 </mat-list-item>
+    <mat-list-item><mat-icon>noise_control_off</mat-icon>  Topic 4 </mat-list-item>
+    <mat-list-item><mat-icon>noise_control_off</mat-icon>  Topic 5 </mat-list-item>
+    <mat-list-item><mat-icon>noise_control_off</mat-icon>  Topic 6 </mat-list-item>
+    <mat-list-item><mat-icon>noise_control_off</mat-icon>  Topic 7 </mat-list-item>
+    <mat-list-item><mat-icon>noise_control_off</mat-icon>  Topic 8 </mat-list-item>
+   </mat-list>
+  </div>
 
 </div>
+
+<mat-divider></mat-divider>

@@ -1,10 +1,51 @@
 .parent
 {
    display:flex;
+   margin-left:20px;
+}
 
+mat-icon
+{
+    margin-right:10px;  
+}
+
+.child-one
+{   
+    flex-direction: row;
+    align-self: flex-end;
+    justify-content: flex-start;   
+    width:350px;   
+}
+
+child-one input
+{
+    font-size:20px;
 }
 
 .child-two
-{       
-    justify-content: flex-end;
+{   
+    margin-top:40px;
+    flex-direction:column;
+    align-self: flex-end;
+    justify-content: flex-start;
+}
+
+p
+{
+font-size:20px;
+}
+
+mat-list
+{
+max-height: 200px;
+overflow: auto;
+}
+
+mat-divider
+{
+    margin-top:20px;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
 }

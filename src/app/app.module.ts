@@ -21,6 +21,8 @@ import { CourseStudentsComponent } from './components/course-students/course-stu
 import { CourseRegistryComponent } from './components/course-registry/course-registry.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
