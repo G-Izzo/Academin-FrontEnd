@@ -1,3 +1,17 @@
+.course-title {
+  padding: 20px 50px;
+  font-size: 3em;
+  margin: 0;
+}
+
+.course-interface-selector {
+  margin: 0 12px;
+}
+
+.course-interface-selector:first-of-type {
+  margin-left: 50px;
+}
+
 .breaker {
   padding-bottom: 16px;
 }
@@ -6,4 +20,5 @@
   display: flex;
   flex-wrap: wrap;
   max-width: calc(100vw - 200px);
+  margin-left: 25px;
 }

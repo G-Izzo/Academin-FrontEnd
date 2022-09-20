@@ -1,7 +1,8 @@
 #search-bar {
   /* display: block; */
-  width: 100%;
+  width: calc(100vw - 350px);
 
   border: 0;
-  padding: 34px 0;
+  padding: 25px 50px;
+  font-size: 2em;
 }

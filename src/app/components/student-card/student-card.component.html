@@ -1,4 +1,11 @@
 <mat-card class="student-card">
-  <mat-card-title> {{ student.name }} {{ student.surname }} </mat-card-title>
-  <mat-card-subtitle> {{ student.id }} </mat-card-subtitle>
+  <mat-card-title class="student-card-title">
+    {{ student.name }} {{ student.surname }}
+  </mat-card-title>
+  <mat-card-content>
+    <p>
+      Contenuti dello studente numero {{ student.id }}, {{ student.name }}
+      {{ student.surname }}
+    </p>
+  </mat-card-content>
 </mat-card>
