@@ -1,6 +1,20 @@
-<h1>{{ courseContainer.course.name }} - {{ courseContainer.name }}</h1>
-<button mat-flat-button (click)="switchInterface(1)">Studenti</button>
-<button mat-flat-button (click)="switchInterface(2)">Registro</button>
+<h1 class="course-title">
+  {{ courseContainer.course.name }} - {{ courseContainer.name }}
+</h1>
+<button
+  mat-flat-button
+  (click)="switchInterface(1)"
+  class="course-interface-selector"
+>
+  Studenti
+</button>
+<button
+  mat-flat-button
+  (click)="switchInterface(2)"
+  class="course-interface-selector"
+>
+  Registro
+</button>
 <div class="breaker"></div>
 <app-course-students
   class="student-container"

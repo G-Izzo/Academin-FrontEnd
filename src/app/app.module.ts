@@ -25,6 +25,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import {} from 'jasmine';
 import { StudentCardComponent } from './components/student-card/student-card.component';
+import { SearchOutputComponent } from './components/search-output/search-output.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { StudentCardComponent } from './components/student-card/student-card.com
     CourseStudentsComponent,
     CourseRegistryComponent,
     StudentCardComponent,
+    SearchOutputComponent,
   ],
   imports: [
     BrowserModule,
