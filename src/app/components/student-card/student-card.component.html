@@ -2,10 +2,13 @@
   <mat-card-title class="student-card-title">
     {{ student.name }} {{ student.surname }}
   </mat-card-title>
-  <mat-card-content>
-    <p>
+  <mat-card-content class="student-card-content">
+    <span>
       Contenuti dello studente numero {{ student.id }}, {{ student.name }}
       {{ student.surname }}
-    </p>
+    </span>
   </mat-card-content>
+  <mat-card-footer class="student-card-footer">
+    <span>Risorsa</span>
+  </mat-card-footer>
 </mat-card>

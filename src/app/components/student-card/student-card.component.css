@@ -8,4 +8,14 @@
   background-color: var(--main-color);
   color: white;
   padding: 15px;
+  margin: 0;
+}
+
+.student-card-content {
+  margin: 5px 15px;
+}
+
+.student-card-footer {
+  margin: 0 15px;
+  padding-bottom: 25px;
 }
