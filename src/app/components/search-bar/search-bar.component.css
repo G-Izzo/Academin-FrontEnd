@@ -1,5 +1,7 @@
-mat-form-field {
-  min-width: calc(100vw - 250px);
-  max-width: calc(100vw - 250px);
+#search-bar {
+  /* display: block; */
   width: 100%;
+
+  border: 0;
+  padding: 34px 0;
 }
