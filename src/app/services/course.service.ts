@@ -25,7 +25,6 @@ export class CourseService {
 
   constructor() {}
 
-  /* Use only to fetch an existing course */
   changeCourse(courseID: number) {
     let company, currentCourseContainer;
     try {
