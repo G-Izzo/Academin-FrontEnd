@@ -1,69 +1,73 @@
-.parent
-{
-   display:flex;
-   margin-left:20px;
+.parent {
+    display: flex;
+    margin-left: 20px;
 }
 
-mat-icon
-{
-    margin-right:10px;  
+.datepicker {
+    width: 350px;
+    margin-top: 30px;
 }
 
-.datepicker
-{   
-    flex-direction: row;  
-    align-self: flex-end;
-    justify-content: flex-start;   
-    width:350px;   
+#picker {
+    font-size: 20px;
 }
 
-.topics
-{   
-    margin-top:40px;
-    flex-direction:column;
-    align-self: flex-end;
-    justify-content: flex-start; 
+#reg_btn {
+    height: 50px;
+    width: 120px;
+    margin-left: 70%;
+    margin-top: 75px;
+    font-size: 20px;
 }
 
-.topics #bodytopics
-{
-    color:gray;    
-    position:relative;
-    margin-left:80px;
-    margin-right:40px;
+.topics {
+    position: relative;
+    margin-top: 40px;  
+    width: 100%;
 }
 
-.examslist
-{      
-    flex-direction:column;   
-}
-
-.datepicker #picker
-{
-    font-size:20px;
-}
-
-p
-{
-font-size:20px;
-}
-
-mat-list
-{
-max-height: 400px;
-overflow: auto;
-}
-
-mat-divider
-{
+.topics textarea {
+    color: gray;
+    position: relative;  
     margin-top:20px;
+    margin-left:10px;
+    width: 97%;
+    min-width:350px;
+    min-height:15px;
+    font-size: 20px;
+    border:none; 
+}
+
+.examslist {
+    margin-top: 30px; 
+}
+
+.examslist input {    
+    border: none;
+}
+
+p {
+    font-size: 20px;
+}
+
+mat-icon {
+    margin-right: 10px;
+}
+
+mat-list {
+    max-height: 400px;
+    overflow: auto;
+    margin-bottom:40px;
+}
+
+mat-divider {
+    margin-top: 20px;
 }
 
 ::ng-deep .mat-form-field-underline {
     display: none;
 }
 
-::ng-deep .mat-form-field
-{           
-    font-size:15px;
+::ng-deep .mat-form-field {
+    font-size: 15px;
 }
