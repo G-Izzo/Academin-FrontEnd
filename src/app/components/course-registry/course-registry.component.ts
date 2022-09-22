@@ -11,9 +11,17 @@ const moment = _moment;
 export class CourseRegistryComponent implements OnInit {
 
   currentDate = moment().toDate()
+  courseService: any;
+  courseSubscription: any;
   constructor() { }
 
+  dateChangeHandler(data:any)
+  {
+   
+  }
+
   ngOnInit(): void {
+    
   }
 
 }

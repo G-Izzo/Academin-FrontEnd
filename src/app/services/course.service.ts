@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
+import { MOCK_EXAM, MOCK_LESSON } from '../mock data/mock_course-registry';
 import { MOCK_MENU } from '../mock data/mock_menu';
+import { Exam } from '../models/exam.model';
+import { Lesson } from '../models/lessons.model';
 import { Company, CourseContainer } from '../models/node.model';
 
 let default_container: CourseContainer = {
@@ -46,4 +49,13 @@ export class CourseService {
   getAllCourses(): Observable<Company[]> {
     return of(MOCK_MENU);
   }
+
+  getLesson(): Observable<Lesson[]>{
+    return of(MOCK_LESSON);
+  }
+
+  getExam():Observable<Exam[]>{
+    return of(MOCK_EXAM);
+  }
+
 }

@@ -19,7 +19,7 @@ export class AppComponent {
       id: 1,
       name: 'Corso 1',
       starting_date: new Date('2022-08-03'),
-      ending_date: new Date('2023-06-30'),
+      ending_date: new Date('2023-06-21'),
       lessons: [
         {
           id: 1,
