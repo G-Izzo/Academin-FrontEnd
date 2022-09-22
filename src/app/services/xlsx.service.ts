@@ -36,10 +36,8 @@ export class XlsxService {
     if(course.lessons!=undefined)
     {
       students=this.listaStudenti(course.lessons);
-      console.log(students);
       
-      righeVoti=this.generaRigheVoti(course.starting_date,course.lessons, students, course.starting_date, course.ending_date);
-      console.log(righeVoti);
+      righeVoti=this.generaRigheVoti(course, students);
       
       righeVoti.forEach(riga=>{
         worksheet.addRow(riga);
@@ -127,56 +125,51 @@ export class XlsxService {
     return studenti;
   }
 
-  //TODO allineare al entro e in mezzo, fixare il posizionamento dei voti
-  generaRigheVoti(dataInizio:Date ,lessons:Lesson[], students:lesson_student[], ultimaData:Date, dataFine:Date){
-    let righeVoti: any[][]=[];
-    students.forEach(student=>{
-      let studente:String[]=[`${student.student.name} ${student.student.surname}`];
-      let scroll=new Date(dataInizio);
-      let totaleOre=0;
-      lessons.forEach(lesson=>{
-        let flag=true;
-        while(scroll.getTime()<lesson.date.getTime()){
-          scroll.setDate(scroll.getDate()+1);
-          if(scroll.getDate()==new Date(scroll.getFullYear(), scroll.getMonth()+1, 0).getDate())
-            studente.push(totaleOre.toString());
+  //TODO allineare al entro e in mezzo + Bloccare prima colonna + Unire celle orizzonatli + Unire celle verticali
+  generaRigheVoti(course: Course, students: lesson_student[]) {
+    let righeStudenti: String[][] = [];
+    students.forEach(student => {
+      let studente: String[] = [`${student.student.name} ${student.student.surname}`];
+      let totaleOre = 0;
+      let scroll=new Date(course.starting_date)
+      course.lessons?.forEach(lesson => {
+        for(;scroll.getTime()<lesson.date.getTime();scroll.setDate(scroll.getDate()+1))
+        { 
+          if(scroll.getDay()==5||scroll.getDay()==6)
+            studente.push("∙");       
           else
-            studente.push("");
+            studente.push("");       
+          if(scroll.getDate()==new Date(scroll.getFullYear(),scroll.getMonth()+1,0).getDate())
+          {
+            studente.push(totaleOre.toString());
+            totaleOre=0;            
+          }
         }
         lesson.students.forEach(lesson_student=>{
           if(lesson_student.student.id==student.student.id)
           {
+            totaleOre+=lesson_student.exit_time.getHours()-lesson_student.join_time.getHours();
             studente.push(lesson_student.daily_grade.toString());
-            flag=false;
-            ultimaData=lesson.date;
-            if(lesson_student.exit_time!=undefined&&lesson_student.join_time!=undefined)
-            {
-              totaleOre+=lesson_student.exit_time.getHours()-lesson_student.join_time.getHours();       
-            }              
+            scroll.setDate(scroll.getDate()+1);
           }
-        })
-        if(flag)
-          studente.push("");
-      })
-      while(scroll.getTime()<dataFine.getTime()){
-        scroll.setDate(scroll.getDate()+1);
-        if(scroll.getDate()==new Date(scroll.getFullYear(), scroll.getMonth()+1, 0).getDate())
-          studente.push("0");
-        studente.push("");
+        })   
+      });
+      let end=new Date(course.ending_date);
+      end.setDate(end.getDate()+1);
+      for(;scroll.getTime()<end.getTime();scroll.setDate(scroll.getDate()+1))
+      {
+        if(scroll.getDay()==5||scroll.getDay()==6)
+            studente.push("∙");       
+          else
+            studente.push("");  
+        if(scroll.getDate()==new Date(scroll.getFullYear(),scroll.getMonth()+1,0).getDate())
+            studente.push("0");
       }
-      righeVoti.push(studente);
+      studente.push("0");
+      righeStudenti.push(studente);
     });
-    return righeVoti;
-  }
-
-  calcolaDifferenza(data1: Date, data2: Date) {
-    return Math.round((data1.getTime() - data2.getTime()) * 1.1574074074067E-8) -1 ;
-  }
-
-  aggiungiSpazio(riga: String[], spazi: Number) {
-    for (let i = 0; i < spazi; i++)
-      riga.push("");
-  }
+    return righeStudenti;
+  }  
 
   estraiCifre(anno:number){
     let cifre=anno%10;
