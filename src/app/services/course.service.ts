@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { MOCK_MENU } from '../components/company-explorer/mock_menu';
+import { MOCK_MENU } from '../mock data/mock_menu';
 import { Company, CourseContainer } from '../models/node.model';
 
 let default_container: CourseContainer = {
