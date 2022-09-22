@@ -1,2 +1,8 @@
 <!-- TODO: add search icon in placeholder -->
-<input type="text" id="search-bar" placeholder="Cerca" />
+<input
+  type="text"
+  id="search-bar"
+  placeholder="Cerca"
+  (keydown.enter)="search($event)"
+  #searchBar
+/>

@@ -1,0 +1,6 @@
+.matching-students {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: calc(100vw - 200px);
+  padding-left: 25px;
+}

@@ -26,6 +26,7 @@ import { MatCardModule } from '@angular/material/card';
 import {} from 'jasmine';
 import { StudentCardComponent } from './components/student-card/student-card.component';
 import { SearchOutputComponent } from './components/search-output/search-output.component';
+import { FilterByQueryPipe } from './pipes/filter-by-query.pipe';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { SearchOutputComponent } from './components/search-output/search-output.
     CourseRegistryComponent,
     StudentCardComponent,
     SearchOutputComponent,
+    FilterByQueryPipe,
   ],
   imports: [
     BrowserModule,

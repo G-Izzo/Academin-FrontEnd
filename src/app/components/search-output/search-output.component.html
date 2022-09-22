@@ -1,1 +1,8 @@
-<p>search-output works!</p>
+<div class="matching-students">
+  <app-student-card
+    *ngFor="let student of matchingStudents | filterByQuery: query"
+    [student]="student"
+    [queryResult]="true"
+  >
+  </app-student-card>
+</div>

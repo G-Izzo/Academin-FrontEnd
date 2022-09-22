@@ -14,10 +14,9 @@ let default_student = {
 })
 export class StudentCardComponent implements OnInit {
   @Input() student: Student = default_student;
+  @Input() queryResult: boolean = false;
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.student);
-  }
+  ngOnInit(): void {}
 }

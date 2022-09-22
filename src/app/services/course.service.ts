@@ -41,7 +41,6 @@ export class CourseService {
     }
 
     this.courseSource.next(currentCourseContainer);
-    console.log(currentCourseContainer);
   }
 
   getAllCourses(): Observable<Company[]> {

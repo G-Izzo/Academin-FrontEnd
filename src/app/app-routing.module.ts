@@ -6,7 +6,7 @@ import { SearchOutputComponent } from './components/search-output/search-output.
 
 const routes: Routes = [
   { path: 'course/:courseID', component: CourseInterfaceComponent },
-  // { path: '', component: SearchOutputComponent },
+  { path: 'search', component: SearchOutputComponent },
   { path: '', component: FrontPageComponent },
   { path: '*', redirectTo: '', pathMatch: 'full' },
 ];
