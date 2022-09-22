@@ -1,4 +1,4 @@
-import { Company } from '../../models/node.model';
+import { Company } from '../models/node.model';
 
 export const MOCK_MENU: Company[] = [
   {
